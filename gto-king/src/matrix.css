@@ -43,11 +43,6 @@
     background-color: red;
 }
 
-.rangeselection {
-    width: 950px;
-    margin: auto;
-}
-
 .header {
     display: flex;
     flex-direction: row;

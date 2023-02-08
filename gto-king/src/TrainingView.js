@@ -5,7 +5,7 @@ import DropdownItem from "./DropdownItem";
 import Header from "./Header";
 import './matrix.css'
 import './training.css'
-import './header.css'
+
 
 function TrainingView() {
 

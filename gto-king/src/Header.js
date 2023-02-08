@@ -11,7 +11,7 @@ export default function Header() {
                 <div class="header-content">
                     <Link to="/">
                     <img src={crown} className="logoIcon" />
-                    <a href="#" class="logo">GTO KING</a>
+                    <a className="logo">GTO KING</a>
                     </Link>
                     {/* <img src={crown} className="logoIcon" />
                     <a href="#" class="logo">GTO KING</a> */}

@@ -1,13 +1,23 @@
 import { useState } from "react";
 import Header from "./Header";
 import PreflopTrivia from "./PreflopTrivia";
+import './training.css'
+import './header.css'
+import './matrix.css'
 
 function Training(props) {
 
     return (
         <>
             <Header />
-            <PreflopTrivia matrix={props.matrix} /> 
+            <div className='rangeselection'>
+                <div className="trivia">
+                {
+                    <PreflopTrivia matrix={props.matrix} /> 
+                }
+                </div>
+            </div>
+
         </>
     );
   }
