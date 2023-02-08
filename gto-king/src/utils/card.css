@@ -1,0 +1,46 @@
+.card {
+    height: 90px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: rgb(228, 12, 12);
+    position: relative;
+    overflow: hidden;
+    margin: 2px;
+}
+
+.heart {
+    background-color: rgb(228, 12, 12);
+}
+
+.diamond {
+    background-color: rgb(21, 91, 182)
+}
+
+.clubs {
+    background-color: rgb(96, 101, 105);
+}
+
+.clovers {
+    background-color: rgb(12, 150, 26);
+}
+
+
+.card-value {
+    font-size: calc(112.5%*3.8);
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    color: whitesmoke;
+    position: absolute;
+    bottom: -10px;
+    right: 2px;
+}
+
+.svg{
+    width: 25px;
+    height: auto;
+    float:right;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 3px;
+}

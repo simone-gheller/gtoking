@@ -1,0 +1,145 @@
+@import-normalize;
+
+.hand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.answer {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border-width: 0;
+  background-color: #4a3b3b;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+}
+
+.answer:hover {
+  background-color: #281f1f;
+}
+
+.raise {
+  background-color: #f03c3c;
+}
+
+.raise:hover {
+  background-color: #9c2525;
+}
+
+.allin {
+  background-color: #f18b17;
+}
+
+.allin:hover {
+  background-color: #b06612;
+}
+
+.fold {
+  background-color: #5858d6;
+}
+
+.fold:hover {
+  background-color: #3c3c98;
+}
+
+.errorCard {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 4px solid #f03c3c;
+  background-color: #4a3b3b;
+}
+
+.errorCard:hover{
+  background-color: #4a3b3b;
+  cursor:auto;
+}
+
+.refresh {
+  width: 10rem;
+  height: 3rem;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  display: inline;
+  background-color: #2cb022;
+}
+
+.refresh:hover {
+  background-color: #238e1b;
+}
+
+.flexBtn {
+  margin-top: 10px;
+}
+
+
+.buttonGroup{
+  display: flex;
+  flex-direction: row;
+  gap: 0.1rem;
+  width: 100%;
+  height: 4rem;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+
+
+.trivia{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.score {
+  background-color: #281f1f;
+  border-radius: 30px;
+  color: white;
+  width: 20%;
+  height: 50px;
+  margin: 10px;
+}
+
+.scoreIcon {
+  width: 30px;
+  float: left;
+  padding: 10px;
+  padding-left: 15px;
+}
+
+.answerParagraph {
+  padding: 10px;
+  margin: auto;
+}
+
+.scoreFlex{
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  height: 50px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.block{
+  display: block;
+  height: 50px;
+  width: 100%;
+}
+
+.btnTitle {
+  margin: auto;
+}
+
+.ff{
+  width: 1rem;
+  margin-left: 10px;
+}

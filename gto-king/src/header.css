@@ -1,0 +1,130 @@
+body {
+  font-family: Roboto, sans-serif;
+}
+
+header {
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-content {
+  align-items: center;
+  max-width: 1200px;
+  margin: 0;
+  padding: 10px 20px;
+  color: #212529;
+}
+
+    
+/* MEDIA QUERIES  */
+@media (min-width: 640px) {
+    
+  .header-content {
+    display: flex;
+  }
+
+}
+  
+.logo {
+  text-decoration: none;
+  font-size: 2rem;
+  color: inherit;
+  margin-right: 20px;
+} 
+
+.logoIcon{
+  width: 40px;
+  margin-right: 5px;
+}
+
+.menuIcon{
+  width: 30px;
+  float: left;
+}
+
+nav {
+    position: absolute;
+    left: calc(50% - 40px);
+    width: 8.125rem;
+}
+
+.menu {
+  width: 130px;
+}
+
+.menuBtn{
+    padding: 6px;
+    height: 100%;
+    font-size: 1.3rem;
+}
+
+.menuBtn:hover{
+  background-color: #6b6b6b;
+  cursor: pointer;
+}
+
+/*
+left: (min-width-nav.width)/2
+*/
+.dropdownGrid {
+    position: absolute;
+    left: -10.5rem; 
+    box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+    z-index: 99;
+    min-width: 29rem;
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;  
+    visibility: hidden;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.menuBtn:hover ~ .dropdownGrid {
+    height: 138px;
+    visibility: visible;
+}
+
+.dropdownGrid:hover{
+    height: 138px;
+    visibility: visible;
+}
+
+.dropdownGrid button{
+    margin: auto;
+    width: 100%;
+    max-height: 65px;
+    text-decoration: none;
+    text-align: left;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.dropdownGrid button p{
+  margin: 2px;
+}
+
+
+.dropdownGrid button:hover{
+    background-color: #6b6b6b;
+}
+
+.menuIcon{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 20px;
+}

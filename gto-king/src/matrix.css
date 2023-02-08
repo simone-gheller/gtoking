@@ -1,0 +1,171 @@
+:root {
+    --primary-bg: #242526;
+    --secondary-bg: #fff;
+    --primary-text-color: #555;
+    --secondary-text-color: #cecece;
+    --border-radius: 8px;
+    --speed: 500ms;
+  }
+
+.matrixRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.matrixCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.cell {
+    flex: 1 0 0;
+    max-width: 50px;
+    height: auto;
+    border: 1px solid white;
+    background-color: rgb(48, 43, 43);
+    color: white;
+}
+
+.cell:hover {
+    opacity: 75%;
+    cursor: pointer;
+}
+
+.cell::before {
+    padding-top: 100%;
+    content: '';
+    float: left;
+}
+
+.selected {
+    background-color: red;
+}
+
+.rangeselection {
+    width: 950px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    flex: 1 1 auto;
+    margin: auto;
+    position: relative;
+}
+
+.practiseBtn {
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 150px;
+}
+
+.dropdown {
+    width: 25px;
+}
+
+.mainMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fff;
+
+}
+
+.expandedMenu {
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 250px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: visible;
+}
+
+.menuItem {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+.dropdownItem{
+    display: flex;
+    margin: 10px auto;
+}
+
+.dropdownItem img{
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: var(--speed);
+}
+
+.dropdownItem a{
+    max-width: 100px;
+    margin-left: 10px;
+    transition: var(--speed);
+}
+
+.dropdown-menu{
+    position: absolute;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    width: 200px;
+    border: 5px solid black;
+    display: flex;
+    flex: row;
+}
+
+.dropdown-menu::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    background: var(--secondary-bg);
+    transform: rotate(45deg);
+}
+
+.dropdown-menu.active{
+opacity: 1;
+visibility: visible;
+}
+
+.dropdown-menu.inactive{
+opacity: 0;
+visibility: hidden;
+}
+
+
+h3{
+width: 100%;
+text-align: center;
+font-size: 18px;
+padding: 20px 0;
+font-weight: 500;
+font-size: 18px;
+color: var(--primary-text-color);
+line-height: 1.2rem;
+}
+
+h3 span{
+font-size: 14px;
+color: var(--secondary-text-color);
+font-weight: 400;
+}
