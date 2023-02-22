@@ -8,18 +8,18 @@ import graduation from './utils/graduation.png'
 export default function Header() {
     return (
         <header>
-                <div class="header-content">
+                <div className="header-content">
                     <Link to="/">
-                    <img src={crown} className="logoIcon" />
-                    <a className="logo">GTO KING</a>
+                        <div className="logo">
+                            <img src={crown} className="logoIcon" />
+                            <div className="logoName">GTO KING</div>
+                        </div>
                     </Link>
-                    {/* <img src={crown} className="logoIcon" />
-                    <a href="#" class="logo">GTO KING</a> */}
                     <nav aria-label="main navigation">
                         <div className="menu">
                             <div className="menuBtn">
                                 <span>Services</span>
-                                <img src={star} class="menuIcon" />
+                                <img src={star} className="menuIcon" />
                             </div>
                             <div className="dropdownGrid">
                                 <Link to="/">

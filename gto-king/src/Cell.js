@@ -6,8 +6,13 @@ function Cell(props) {
 
     const toggle = () => {
         let arr = [...props.matrix]
-        arr[props.x][props.y]= !props.matrix[props.x][props.y]
-        props.update(arr)
+        if(props.matrix[props.x][props.y]==0){
+            arr[props.x][props.y] = 1
+        }
+        else{
+            arr[props.x][props.y] = 0
+        }
+        props.update(props.x, arr[props.x], arr)
         console.log(props.matrix)
     }
 

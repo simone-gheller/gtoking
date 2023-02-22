@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const user = await loginUser(data)
       setUser(user);
-      navigate("/profile");
+      navigate("/");
     } catch (error) {
       console.log("error")
       throw error

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCardComponent, getRandomTuple, resolveCardSuit, resolveCardText, resolveCardValue } from "./utils/cards";
+import { getRange } from './api';
 import {AnimatePresence, motion} from "framer-motion"
 import './training.css'
 import success from "./utils/tick.png"
@@ -30,27 +31,42 @@ function PreflopTrivia(props) {
     const [scoreView, setScoreView] = useState(false)
     const [showResult, setShowResult] = useState(false)
     const [spree, setSpree] = useState(0)
+    const [matrix, setMatrix] = useState(null)
 
     useEffect(()=>{
         if(score!=null)
             score && refreshHand()
     },[score])
 
+    useEffect(()=>{
+        const getRangeFromServer = async () =>{
+            try {
+                const range = await getRange()
+                console.log(range)
+                setMatrix(range)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getRangeFromServer();
+    },[])
+
     const refreshHand = () => {
         setHoles(getRandomTuple(2))
         setScore(null)
-        setAnswer(null)
+        // setAnswer(null)
     }
 
     const resolveAnswer = (ans) => {
         setShowResult(true)
         let result
-        result = props.matrix[holes[0].v][holes[1].v] == ans
+        result = matrix[holes[0].v][holes[1].v] == ans
         console.log(result)
         if(result)
             setSpree(spree=>spree+1)
         else
             setSpree(0)
+        console.log('answer', ans)
         setAnswer(ans)
         setScore(result)
         setScoreView(result)
@@ -108,19 +124,19 @@ function PreflopTrivia(props) {
             </div>
             <div className="buttonGroup">
                 <button onClick={()=>{resolveAnswer(false)}} className={`answer ${score===false?'errorCard':'fold'}`} disabled={score===false}>
-                    {answer!=null && 
+                    {score===false &&
                         <img src={answer===false?fail:success} className="scoreIcon" />
                     }
                     <p className="btnTitle" >FOLD</p>
                 </button>
                 <button onClick={()=>{resolveAnswer(true)}} className={`answer ${score===false?'errorCard':'raise'}`} disabled={score===false}>
-                    {answer!=null &&
+                    {score===false &&
                         <img src={answer===true?fail:success} className="scoreIcon" />
                     }
                 <p className="btnTitle" >RAISE</p> 
                 </button>
                 <button onClick={()=>{resolveAnswer(true)}} className={`answer ${score===false?'errorCard':'allin'}`} disabled={score===false}>
-                    {answer!=null &&
+                    {score===false &&
                         <img src={answer===true?fail:success} className="scoreIcon" />
                     }
                 <p className="btnTitle" >ALLIN</p> 

@@ -38,4 +38,41 @@ const loginUser = async (credentials) => {
 
 }
 
-export {loginUser,getUserInfo}
+const getRange = async ()=>{
+    const response = await fetch('http://localhost:3001/api/ranges', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'Application/json'
+        },
+        credentials: 'include',
+    })
+    if(response.ok){
+        const range = await response.json();
+        const parsedMap = range.map(value=>value.split('').map(cell=>parseInt(cell)))
+        console.log(parsedMap)
+        return parsedMap
+    }
+}
+
+const updateRangeRow = async (rowNumber, row)=>{
+    console.log(rowNumber, row)
+    const response = await fetch('http://localhost:3001/api/ranges/update', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'Application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+            "rowNumber": rowNumber,
+            "row": row
+        })
+    })
+    if(response.ok){
+        const result = await response.json();
+        console.log(result)
+        return true
+    }
+    return false
+}
+
+export {loginUser,getUserInfo, getRange, updateRangeRow}

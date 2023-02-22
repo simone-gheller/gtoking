@@ -3,8 +3,8 @@ import suit from './clovers.svg';
 
 function Clover(props) {
     return (
-        <div class="card clovers">
-        <div class="card-value">
+        <div className="card clovers">
+        <div className="card-value">
         {props.value}
         </div>
         <img src = {suit} alt={"My Happy SVG"} className={'svg'}/>

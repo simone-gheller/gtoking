@@ -5,13 +5,17 @@ body {
 header {
   position: relative;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 a {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
   color: inherit;
 }
 
@@ -32,17 +36,22 @@ a {
   }
 
 }
-  
+
 .logo {
-  text-decoration: none;
+  width: 200px;
+}
+  
+.logoName {
+  font-weight: 700;
   font-size: 2rem;
   color: inherit;
-  margin-right: 20px;
+  padding: 0;
 } 
 
 .logoIcon{
   width: 40px;
   margin-right: 5px;
+  float: left;
 }
 
 .menuIcon{
@@ -91,12 +100,12 @@ left: (min-width-nav.width)/2
 }
 
 .menuBtn:hover ~ .dropdownGrid {
-    height: 138px;
+    height: 162px;
     visibility: visible;
 }
 
 .dropdownGrid:hover{
-    height: 138px;
+    height: 162px;
     visibility: visible;
 }
 
@@ -112,10 +121,14 @@ left: (min-width-nav.width)/2
     border-radius: 5px;
     padding: 12px;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .dropdownGrid button p{
   margin: 2px;
+  font-weight: 400;
+  font-size: 0.7rem;
 }
 
 
