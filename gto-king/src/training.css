@@ -6,6 +6,22 @@
   margin-top: 20px;
 }
 
+.statistics {
+  width: 40px;
+  height: 100vh;
+  transition: width 0.25s linear;
+}
+
+.training {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.toggleStats {
+  width: 40px;
+}
+
 .trivia{
   display: flex;
   flex-direction: column;
@@ -147,4 +163,139 @@
 .ff{
   width: 1rem;
   margin-left: 10px;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .statistics > .menu__box {
+  left: 0 !important;
+}
+
+#menu__toggle:checked ~ .statistics {
+  width: 300px;
+}
+
+.menu__btn {
+  position: fixed;
+  top: 90px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 68px;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 60px 0;
+  list-style: none;
+  background-color: #ECEFF1;
+  transition-duration: .25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.scoreMenu {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 20px;
+  padding: 12px 24px;
+  transition-duration: .25s;
+}
+
+.menu__box > h3 {
+  padding: 12px 24px;
+  margin: 0;
+  text-align: left;
+  font-weight: 400;
+  background-color: #959393;
+  color: white;
+}
+
+.scoreNumber {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.scoreLabel {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.progress-bar {
+  background-color: #208c22;
+  color: white;
+}
+
+.progress {
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+  width: 70%;
+  height: 13px;
+}
+
+.successPG {
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.bar {
+  width: 100%;
+  display: flex;
+}
+
+.bars {
+  padding: 24px;
+}
+
+.barLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 7px;
+width: 40px;
 }

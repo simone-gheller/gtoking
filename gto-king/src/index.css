@@ -16,3 +16,7 @@ code {
   margin: auto;
   width: 300px;
 }
+
+html body #root {
+  height: 100%;
+}

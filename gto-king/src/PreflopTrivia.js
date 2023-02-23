@@ -62,13 +62,16 @@ function PreflopTrivia(props) {
         let result
         result = matrix[holes[0].v][holes[1].v] == ans
         console.log(result)
-        if(result)
+        if(result){
             setSpree(spree=>spree+1)
+            props.increaseCorrectHandsN()
+        }
         else
             setSpree(0)
         console.log('answer', ans)
         setAnswer(ans)
         setScore(result)
+        props.increaseHandsNumber()
         setScoreView(result)
         setTimeout(()=>{
             setShowResult(false)

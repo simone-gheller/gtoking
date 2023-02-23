@@ -18,8 +18,7 @@ passport.serializeUser((user,done)=>{
   done(null, user)
 })
 
-passport.deserializeUser((user,done)=>{
-  console.log(user)
+passport.deserializeUser((user,done)=>{ 
   dao.getUsername(user).then(user=>{
     done(null,user)
   })
@@ -52,8 +51,21 @@ const loggedIn = (req,res, next)=>{
   return res.status(400).json({msg: "not authenticated"})
 }
 
-app.get('/api/protected', loggedIn, (req, res) => {
-  res.send('Hello World!')
+app.get('/api/ranges', loggedIn, (req, res) => {
+  dao.getRange(req.user).then(range=>{
+    if(!range)
+      return res.status(501).json({error: "Error fetching from DB"})
+    res.json(range)
+  })
+})
+
+app.post('/api/ranges/update', loggedIn, (req, res) => {
+  const row = req.body.row.toString().replaceAll(',','')
+  dao.updateRange(req.user, req.body.rowNumber, row).then(result=>{
+    if(!result)
+      return res.status(501).json({error: "Error connecting to DB"})
+    res.json(result)
+  })
 })
 
 app.post('/api/sessions', passport.authenticate('local'), (req, res) => {
